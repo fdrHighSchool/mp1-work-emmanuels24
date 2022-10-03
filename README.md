@@ -2,9 +2,9 @@
 ## fall-22-mp1-work
 
 
-### Last Name:  
-### First Name: 
-### GitHub Username: 
+### Last Name:  Sanchez
+### First Name: Emmanuel
+### GitHub Username: emmanuels24
 
 ---
 #### General Workflow: 

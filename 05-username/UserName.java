@@ -17,25 +17,15 @@ public class UserName {
     String firstName = s.nextLine();
     System.out.print("Enter your last name: ");
     String lastName = s.nextLine();
-
-    System.out.print("Enter your favorite number: ");
-    String favNum = s.nextLine();
     
-    System.out.print("Are you a teacher or a student? ");
-    String posit = s.nextLine();
+    System.out.println("Hello " + getInitial(firstName) + "." + getInitial(lastName) + ".");
     
-    // test output
-    if (posit.equalsIgnoreCase("Student")) {
-        System.out.println("Your email is: " + getInitial(firstName) + "" + getInitial(lastName) + "" + (favNum) + "@nycstudents.net");
-    }
-    else if (posit.equalsIgnoreCase("Teacher")) {
-        System.out.println("Your email is: " + getInitial(firstName) + "" + getInitial(lastName) + "" + (favNum) + "@schools.nyc.gov");
-        
-    }
-    generatePassword(8);
+    Scanner input = new Scanner(System.in);
+    System.out.print("Enter a length for your password: ");
+    int length = input.nextInt();
+    generatePassword(length);
     s.close();
   } // end main method
-
   /*
    * Name: initialize
    * Purpose: send back the first character (inital) of a name
@@ -48,12 +38,14 @@ public class UserName {
   //password generation
   //input password length (int)
   //return the password (string)
-  
   public static String generatePassword(int length) {
-      String password = "";
-      int rand = (int)(Math.random()*(90-65+1)+65);
-      char c = (char)rand;
-      System.out.println(rand + " " + c);
-      return password;
+    String password = "";
+    for(int i = 0; i < length; i++) {
+          int rand = (int)(Math.random()*(90-65+1)+65);
+          char c = (char)rand;
+          password += c;
+      }
+    System.out.print("Your password is: " + password);
+    return(password);
     }//end password method
 } // end class

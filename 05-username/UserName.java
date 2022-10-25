@@ -8,7 +8,7 @@
 import java.util.Scanner;
 
 public class UserName {
-  public static void main(String[] args) {
+public static void main(String[] args) {
     // create Scanner object
     Scanner s = new Scanner(System.in);
 
@@ -26,7 +26,7 @@ public class UserName {
     generatePassword(length);
     s.close();
   } // end main method
-  /*
+/*
    * Name: initialize
    * Purpose: send back the first character (inital) of a name
    * Input: a name (String)
@@ -40,12 +40,25 @@ public class UserName {
   //return the password (string)
   public static String generatePassword(int length) {
     String password = "";
-    for(int i = 0; i < length; i++) {
-          int rand = (int)(Math.random()*(90-65+1)+65);
-          char c = (char)rand;
-          password += c;
-      }
+    for(int i = 0; i <length; i++) {
+        int choice = (int)(Math.random()* 3 + 1);
+        if (choice == 1) {
+        int rand3 = (int)(Math.random()*(47-33+1)+33);
+        char b = (char)rand3;
+        password += b;
+        }
+        else if (choice == 2) {
+        int rand = (int)(Math.random()*(90-65+1)+65);
+        char c = (char)rand;
+        password += c;
+    }
+        else if (choice == 3) {
+            int rand2 = (int)(Math.random()*(122-97+1)+97);
+        char d = (char)rand2;
+        password += d;
+    }
+}
     System.out.print("Your password is: " + password);
     return(password);
-    }//end password method
+}//end password method
 } // end class
